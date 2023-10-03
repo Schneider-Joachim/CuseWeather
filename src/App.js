@@ -55,35 +55,30 @@ function Weather() {
         cusePopulation: forecastedInfo.city.population,
       });
 
-      // creatded days
+      // array of days
       const days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
       setForecastData([
         {
-          // fri
           day: days[new Date(forecastedInfo.list[8].dt_txt).getDay()],
           temp: Math.floor(forecastedInfo.list[0].main.temp),
           icon: forecastedInfo.list[0].weather[0].icon,
         },
         {
-          // sat
           day: days[new Date(forecastedInfo.list[16].dt_txt).getDay()],
           temp: Math.floor(forecastedInfo.list[8].main.temp),
           icon: forecastedInfo.list[8].weather[0].icon,
         },
         {
-          //  sun
           day: days[new Date(forecastedInfo.list[24].dt_txt).getDay()],
           temp: Math.floor(forecastedInfo.list[16].main.temp),
           icon: forecastedInfo.list[16].weather[0].icon,
         },
         {
-          // mon
           day: days[new Date(forecastedInfo.list[32].dt_txt).getDay()],
           temp: Math.floor(forecastedInfo.list[24].main.temp),
           icon: forecastedInfo.list[24].weather[0].icon,
         },
         {
-          // tue
           day: days[new Date(forecastedInfo.list[39].dt_txt).getDay()],
           temp: Math.floor(forecastedInfo.list[32].main.temp),
           icon: forecastedInfo.list[32].weather[0].icon,
@@ -111,7 +106,6 @@ function Weather() {
             />
           </div>
           <div className="col-2">
-            {/* example of useState weatherData.temp in where weatherData is the value in the useState and temp is the key set in state in the setWeatherData function */}
             <div id="currentTemp">{weatherData.temp}°</div>
             <p>
               Feels like:{" "}
@@ -119,7 +113,6 @@ function Weather() {
                 {weatherData.feelsLike}°
               </span>
             </p>
-            {/*need to pass in objects in react, not strings*/}
             <div>
               <span style={{ fontWeight: "bold" }}>℉</span> | ℃{" "}
             </div>
@@ -164,9 +157,8 @@ function Weather() {
   );
 }
 
-// Component for days of the week
+// Component for days of the week icons
 const ForecastDay = ({ day, icon, temp }) => {
-  // pass the prop into the functions parameters in order for the browser to render it
   return (
     <div className="col text-center">
       <p>{day}</p>
@@ -178,7 +170,6 @@ const ForecastDay = ({ day, icon, temp }) => {
       </p>
       <p>{temp}</p>
     </div>
-    // pulled these divs from the original weather app's line 31-35
   );
 };
 
