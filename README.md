@@ -1,3 +1,5 @@
+This is a weather application built in React displaying live weather conditions in Syracuse NY using the OpenWeatherMap API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
